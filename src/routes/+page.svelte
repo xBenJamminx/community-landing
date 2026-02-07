@@ -234,7 +234,7 @@
 				Who this is for
 			</div>
 			<h2 class="mt-6 font-display text-3xl font-bold leading-tight text-ink md:text-5xl">
-				You're running a business, building on the side, and raising a family. AI should help with all three.
+				Running a business. Building on the side. Raising a family. AI should help with whichever ones are yours.
 			</h2>
 		</div>
 
