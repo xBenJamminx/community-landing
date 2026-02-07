@@ -169,29 +169,29 @@
 		<div class="mt-12 space-y-4">
 			{#each [
 				{
-					problem: 'You watch a 20-minute YouTube tutorial',
-					pain: 'Get inspired, then realize you have no idea how to actually implement it.',
-					solution: 'Every guide in the library comes from a real project with the actual prompts and configs attached. You walk away with something you built, not something you watched someone else build.'
+					problem: 'You know AI can help your business, but where do you even start?',
+					pain: 'Every day there\'s a new tool, a new model, a new "game-changer." You\'re paralyzed by options.',
+					solution: 'The community includes a living library of build guides from real projects: client automations, product launches, content systems. Each one shows the exact tools, prompts, and configs used. You pick the one closest to your problem and follow the blueprint.'
 				},
 				{
-					problem: 'You save 47 AI Twitter threads',
-					pain: 'Never open any of them again. They rot in your bookmarks.',
-					solution: 'A tested, organized prompt library that replaces the bookmark graveyard. Each prompt is annotated with when to use it, which model it works best with, and what to expect.'
+					problem: 'You want to build something, but you\'re starting from scratch every time.',
+					pain: 'Blank editor. No boilerplate. Hours spent on setup before you write a single line of real logic.',
+					solution: 'Members get access to forkable templates and starter repos: Chrome extension scaffolds, n8n workflows, content pipelines, GTM kits. You clone it, swap in your details, and ship. The boring part is already done.'
 				},
 				{
-					problem: 'You spend 3 hours researching which AI tool to use',
-					pain: 'End up more confused than when you started. Still haven\'t picked one.',
-					solution: 'Monthly roundups with honest assessments from someone who actually uses these tools for client work, side projects, and family life. No affiliate bias. Just what works and what doesn\'t.'
+					problem: 'You\'re paying for AI tools you barely use.',
+					pain: 'Signed up for 5 different things. Not sure which ones are worth keeping. No one gives you an honest answer.',
+					solution: 'Every month, Ben publishes a tool roundup based on what he actually used in his work that month. Real verdicts, no affiliate links. Plus exclusive deals negotiated with tool companies designed to offset your membership cost.'
 				},
 				{
-					problem: 'You get stuck and have nobody to ask',
-					pain: 'Google it for an hour. Try 4 different things. Give up. Go back to doing it manually.',
-					solution: 'A community of people solving the same kinds of problems, with a founder who responds daily. Not a ghost town Discord. A room where questions actually get answered.'
+					problem: 'You hit a wall and have nobody to ask.',
+					pain: 'Stack Overflow is outdated. ChatGPT hallucinates. Reddit threads end in arguments. You waste an hour and give up.',
+					solution: 'The community has active channels where people are building with the same tools you are. Ben is in there daily. Ask a question, get an answer from someone who\'s actually done it. No ghost town energy.'
 				},
 				{
-					problem: 'You see people shipping AI projects every week',
-					pain: 'Wonder what you\'re missing. Feel further behind every day.',
-					solution: 'Templates and starter repos you can fork and make your own. The difference between "I should build something" and actually having something live by Sunday.'
+					problem: 'You have ideas but zero time to figure out the "how."',
+					pain: 'Full-time job. Kids. By the time you sit down to build, you\'re too tired to research the approach.',
+					solution: 'The prompt library and template vault are designed for exactly this. Grab a tested prompt for your use case, plug it into the right model, and get a result in minutes. No research rabbit holes. No trial and error. Just output.'
 				}
 			] as row, i}
 				<div class="reveal grid gap-0 md:grid-cols-2" style="transition-delay: {i * 60}ms;">
