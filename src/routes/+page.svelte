@@ -25,19 +25,19 @@
 	const faqs = [
 		{
 			q: 'Is this a course?',
-			a: "No. It's a living library. New resources added regularly from real work. No curriculum, no timeline. You get everything the moment you join, and it keeps growing."
+			a: "No. It's a growing library of resources plus a community. No curriculum, no timeline, no homework. You get everything the moment you join, and new content is added every week."
 		},
 		{
 			q: 'How is this different from free AI content on YouTube or Twitter?',
-			a: 'Free content gives you the concept. This gives you the execution: actual prompts, exact configs, templates you can fork, and people to ask when you get stuck. Free content teaches the "what." This gives you the "how."'
+			a: 'Free content shows you the concept. This gives you the execution: the actual prompts, step-by-step tutorials, and people to ask when you get stuck. Free content teaches the "what." This gives you the "how."'
 		},
 		{
 			q: 'Do I need to be technical?',
-			a: "No. Ben builds with AI, not with traditional coding expertise. If you can use Notion, Airtable, or a Chrome extension, you can use everything in here."
+			a: "No. Most of the content is designed for people who are not developers. If you can use a web browser and copy-paste a prompt, you can use everything in here. Advanced resources exist for people who want to go deeper, but they're not the focus."
 		},
 		{
 			q: "What if I'm not sure it's worth $29/mo?",
-			a: "The template vault alone includes resources worth over $300 individually. The tool deals are designed to offset your membership cost entirely. Every resource added after you join is included at no extra cost. The library only gets more valuable over time."
+			a: "The prompt packs alone sell for $9-$29 each on their own. The tool deals are designed to offset your membership cost entirely. Everything added after you join is included at no extra cost. The library only gets more valuable over time."
 		},
 		{
 			q: 'Can I cancel anytime?',
@@ -45,13 +45,13 @@
 		},
 		{
 			q: "How much of Ben's time goes into this?",
-			a: "Ben is in the community daily. Responds to questions, shares what he's building, drops resources in real time. Monthly AMAs and build sessions happen on a regular cadence. This isn't a content dump with no one behind it."
+			a: "Ben is in the community daily. Responds to questions, shares what he's working on, drops new resources in real time. Monthly live sessions happen on a regular cadence. This isn't a content dump with no one behind it."
 		}
 	];
 </script>
 
 <svelte:head>
-	<title>BuildsByBen — AI for your whole life</title>
+	<title>BuildsByBen — Learn AI. Use it everywhere.</title>
 </svelte:head>
 
 <!-- Nav -->
@@ -73,16 +73,16 @@
 			<div>
 				<div class="{mounted ? 'reveal visible' : 'opacity-0'}">
 					<div class="mb-6 inline-block rounded-lg border-3 border-ink bg-cyan px-4 py-1.5 font-mono text-xs font-medium uppercase tracking-wider text-ink shadow-[3px_3px_0_#000]">
-						A living library for builders
+						AI for everyday people
 					</div>
 				</div>
 
 				<h1 class="{mounted ? 'reveal visible' : 'opacity-0'} font-display text-5xl font-extrabold leading-[1.05] text-ink md:text-6xl lg:text-7xl">
-					AI for your<br />whole life.
+					Learn AI.<br />Use it everywhere.
 				</h1>
 
 				<p class="{mounted ? 'reveal visible' : 'opacity-0'} mt-6 max-w-md text-lg leading-relaxed text-muted">
-					Stop watching tutorials and start shipping. Get the actual prompts, templates, repos, and workflows that a working dad uses to build real products every week.
+					Tutorials, prompts, tool recommendations, and a community of people figuring out how to use AI in their real lives. Not just theory. The actual how.
 				</p>
 
 				<div class="{mounted ? 'reveal visible' : 'opacity-0'} mt-8 flex flex-wrap items-center gap-4">
@@ -109,23 +109,23 @@
 						<div class="mt-4 space-y-3">
 							<div class="flex items-center gap-2">
 								<div class="h-2.5 w-2.5 rounded-full border-2 border-ink bg-cyan"></div>
-								<span class="text-sm font-medium">How I built a $0-to-launch GTM kit</span>
+								<span class="text-sm font-medium">Tutorial: Automate your content pipeline</span>
 							</div>
 							<div class="flex items-center gap-2">
 								<div class="h-2.5 w-2.5 rounded-full border-2 border-ink bg-yellow"></div>
-								<span class="text-sm font-medium">Prompt: weekly content pipeline</span>
+								<span class="text-sm font-medium">Prompt pack: Business operations (12)</span>
 							</div>
 							<div class="flex items-center gap-2">
 								<div class="h-2.5 w-2.5 rounded-full border-2 border-ink bg-pink"></div>
-								<span class="text-sm font-medium">Template: competitive analysis</span>
+								<span class="text-sm font-medium">Guide: The AI tools I actually pay for</span>
 							</div>
 							<div class="flex items-center gap-2">
 								<div class="h-2.5 w-2.5 rounded-full border-2 border-ink bg-green"></div>
-								<span class="text-sm font-medium">Repo: Chrome extension starter</span>
+								<span class="text-sm font-medium">Prompt pack: Content creation (12)</span>
 							</div>
 						</div>
 						<div class="mt-4 flex items-center gap-2 rounded-lg border-2 border-ink/10 bg-bg-alt px-3 py-2">
-							<span class="font-mono text-xs text-muted">+12 new resources this week</span>
+							<span class="font-mono text-xs text-muted">+8 new resources this week</span>
 						</div>
 					</div>
 				</div>
@@ -138,15 +138,15 @@
 <div class="overflow-hidden border-y-3 border-ink bg-ink py-3.5">
 	<div class="animate-marquee flex w-max gap-10 whitespace-nowrap">
 		{#each Array(3) as _}
-			<span class="font-display text-base font-bold text-bg">GUIDES FROM REAL PROJECTS</span>
+			<span class="font-display text-base font-bold text-bg">STEP-BY-STEP TUTORIALS</span>
 			<span class="text-cyan">&bull;</span>
-			<span class="font-display text-base font-bold text-bg">PROMPTS THAT ACTUALLY WORK</span>
+			<span class="font-display text-base font-bold text-bg">COPY-PASTE PROMPT PACKS</span>
 			<span class="text-cyan">&bull;</span>
-			<span class="font-display text-base font-bold text-bg">TEMPLATES YOU CAN FORK TODAY</span>
+			<span class="font-display text-base font-bold text-bg">HONEST TOOL REVIEWS</span>
 			<span class="text-cyan">&bull;</span>
-			<span class="font-display text-base font-bold text-bg">CODE YOU CAN SHIP</span>
+			<span class="font-display text-base font-bold text-bg">EXCLUSIVE TOOL DEALS</span>
 			<span class="text-cyan">&bull;</span>
-			<span class="font-display text-base font-bold text-bg">A BUILDER WHO SHOWS UP DAILY</span>
+			<span class="font-display text-base font-bold text-bg">A COMMUNITY THAT ACTUALLY HELPS</span>
 			<span class="text-cyan">&bull;</span>
 		{/each}
 	</div>
@@ -162,36 +162,36 @@
 				Sound familiar?
 			</div>
 			<h2 class="mt-6 font-display text-3xl font-bold leading-tight text-ink md:text-5xl">
-				You're drowning in AI content. But nothing you can actually use.
+				You know AI can change your life. You just don't know where to start.
 			</h2>
 		</div>
 
 		<div class="mt-12 space-y-4">
 			{#each [
 				{
-					problem: 'You know AI can help your business, but where do you even start?',
-					pain: 'Every day there\'s a new tool, a new model, a new "game-changer." You\'re paralyzed by options.',
-					solution: 'The community includes a living library of build guides from real projects: client automations, product launches, content systems. Each one shows the exact tools, prompts, and configs used. You pick the one closest to your problem and follow the blueprint.'
+					problem: 'There are 1,000 AI tools and you have no idea which ones are worth paying for.',
+					pain: 'You signed up for 3 different things last month. Used one of them twice. The rest are charging your card for nothing.',
+					solution: 'Every month, Ben publishes an honest breakdown of the AI tools he actually used that month, what they cost, and whether they\'re worth it. No affiliate links. No sponsorships. Just verdicts from someone who uses these tools for real work. Plus exclusive member deals designed to save you more than $29/mo.'
 				},
 				{
-					problem: 'You want to build something, but you\'re starting from scratch every time.',
-					pain: 'Blank editor. No boilerplate. Hours spent on setup before you write a single line of real logic.',
-					solution: 'Members get access to forkable templates and starter repos: Chrome extension scaffolds, n8n workflows, content pipelines, GTM kits. You clone it, swap in your details, and ship. The boring part is already done.'
+					problem: 'You see what AI can do but don\'t know how to make it do that for you.',
+					pain: 'You watched someone on Twitter automate their entire content pipeline. You have no idea how to replicate it. The thread was 12 tweets of hype and zero details.',
+					solution: 'The library has step-by-step tutorials that show you exactly how to set things up. Not concepts. Not overviews. "Open this tool. Paste this prompt. Click here. Here\'s what you should see." Written for people who are not developers.'
 				},
 				{
-					problem: 'You\'re paying for AI tools you barely use.',
-					pain: 'Signed up for 5 different things. Not sure which ones are worth keeping. No one gives you an honest answer.',
-					solution: 'Every month, Ben publishes a tool roundup based on what he actually used in his work that month. Real verdicts, no affiliate links. Plus exclusive deals negotiated with tool companies designed to offset your membership cost.'
+					problem: 'You\'ve tried using ChatGPT but the results are... meh.',
+					pain: 'Generic outputs. Robotic language. Stuff you\'d never actually use. You know the tool is powerful but you\'re clearly not using it right.',
+					solution: 'The prompt packs give you copy-paste-ready prompts for specific tasks: client proposals, content creation, business analysis, even family stuff like bedtime stories and meal planning. Each one includes which AI model works best, when to use it, and example output so you know what to expect.'
 				},
 				{
-					problem: 'You hit a wall and have nobody to ask.',
-					pain: 'Stack Overflow is outdated. ChatGPT hallucinates. Reddit threads end in arguments. You waste an hour and give up.',
-					solution: 'The community has active channels where people are building with the same tools you are. Ben is in there daily. Ask a question, get an answer from someone who\'s actually done it. No ghost town energy.'
+					problem: 'You get stuck and have nobody to ask.',
+					pain: 'Google gives you 2023 answers. Reddit threads end in arguments. You spend an hour troubleshooting and give up.',
+					solution: 'The community has people working through the same problems you are. Ben is in there daily. Ask a question, get a real answer from someone who\'s done it. Not a ghost town Discord. A room where people actually respond.'
 				},
 				{
-					problem: 'You have ideas but zero time to figure out the "how."',
-					pain: 'Full-time job. Kids. By the time you sit down to build, you\'re too tired to research the approach.',
-					solution: 'The prompt library and template vault are designed for exactly this. Grab a tested prompt for your use case, plug it into the right model, and get a result in minutes. No research rabbit holes. No trial and error. Just output.'
+					problem: 'You don\'t have time to figure all this out yourself.',
+					pain: 'Full-time job. Maybe kids. Maybe a side project. By the time you sit down to learn something new, you have 45 minutes before you\'re exhausted.',
+					solution: 'Everything in the library is built for busy people. Prompt packs you can use in 30 seconds. Tutorials you can finish in one sitting. Tool recommendations so you don\'t waste a week researching. The whole point is to skip the research phase and go straight to results.'
 				}
 			] as row, i}
 				<div class="reveal grid gap-0 md:grid-cols-2" style="transition-delay: {i * 60}ms;">
@@ -212,10 +212,10 @@
 
 		<div class="reveal mt-10 rounded-2xl border-3 border-ink bg-yellow-bg p-8 text-center shadow-[6px_6px_0_theme(--color-yellow)]">
 			<p class="font-display text-xl font-bold text-ink md:text-2xl">
-				The gap isn't knowledge. It's execution.
+				The gap isn't knowledge. It's knowing what to actually do.
 			</p>
 			<p class="mt-2 text-muted">
-				You don't need another tutorial. You need the actual files, prompts, and systems someone is already using to get results.
+				You don't need another YouTube video. You need prompts that work, tools that are worth it, tutorials you can follow, and people to ask when you're stuck.
 			</p>
 			<a href="#founding" class="neo-btn mt-6 inline-flex rounded-xl bg-cyan px-7 py-3 text-sm text-ink">
 				Claim your founding spot &rarr;
@@ -234,11 +234,11 @@
 				Who this is for
 			</div>
 			<h2 class="mt-6 font-display text-3xl font-bold leading-tight text-ink md:text-5xl">
-				Running a business. Building on the side. Raising a family. AI should help with whichever ones are yours.
+				Running a business. Building on the side. AI should help with both.
 			</h2>
 		</div>
 
-		<div class="mt-12 grid gap-5 md:grid-cols-3">
+		<div class="mt-12 grid gap-5 md:grid-cols-2">
 			{#each [
 				{
 					who: 'Business Owners',
@@ -246,28 +246,20 @@
 					shadow: 'neo-card-cyan',
 					lines: [
 						'You know AI can save you time and money but don\'t know where to start',
-						'You\'re tired of hype and want practical, proven workflows',
-						'You need systems you can implement this week, not next quarter'
+						'You\'re tired of hype and want to see what actually works',
+						'You need results this week, not a 12-week course',
+						'You want honest tool recommendations from someone with no agenda'
 					]
 				},
 				{
-					who: 'Side Builders',
+					who: 'Side Hustlers',
 					badge: 'bg-yellow-light',
 					shadow: 'neo-card-yellow',
 					lines: [
-						'You have a full-time job and a project you\'re building after hours',
-						'You need to move fast with limited time and no team',
-						'You want to see how someone else is actually shipping solo'
-					]
-				},
-				{
-					who: 'Busy Parents',
-					badge: 'bg-pink-light',
-					shadow: 'neo-card-pink',
-					lines: [
-						'You want to use AI to make family life easier, more fun, or more organized',
-						'Bedtime stories, activity generators, birthday planners, learning tools for your kids',
-						'You have limited free time and want things that work on the first try'
+						'You have a full-time job and something you\'re building on the side',
+						'You have limited time and need to move fast without a team',
+						'You want to see how someone else is actually doing it solo',
+						'You need the shortcut to "what tools do I use and how"'
 					]
 				}
 			] as segment, i}
@@ -297,7 +289,7 @@
 				What's inside
 			</div>
 			<h2 class="mt-6 font-display text-3xl font-bold text-ink md:text-5xl">
-				Not theory. Not courses. Actual things you can use today.
+				Not theory. Not courses. Things you can use today.
 			</h2>
 		</div>
 
@@ -305,49 +297,49 @@
 			{#each [
 				{
 					num: '01',
-					title: 'Build Guides and Breakdowns',
-					desc: 'Step-by-step walkthroughs from real projects. Every guide includes the prompts, configs, and decisions so you can follow along or adapt to your own work.',
-					examples: 'How I built a $0-to-launch GTM kit with AI. Turning 47 bookmarked threads into an organized system. Building a Chrome extension in a weekend.',
+					title: 'Step-by-Step Tutorials',
+					desc: 'Walkthroughs that show you exactly how to use AI for specific tasks. Written for non-technical people. Each one takes you from zero to a working result.',
+					examples: 'How to automate your content pipeline (no code). How to use AI to write client proposals in 10 minutes. How to set up your first automation. How to build a bedtime story generator for your kids.',
 					badge: 'bg-cyan-light',
 					shadow: 'neo-card-cyan'
 				},
 				{
 					num: '02',
-					title: 'Prompt Library',
-					desc: 'Battle-tested prompts organized by use case: content creation, research, product planning, client work, and model optimization.',
-					examples: 'Weekly content pipeline generator. Competitive analysis from a URL. Meeting notes to action items. Client proposal first draft.',
+					title: 'Prompt Packs (Copy-Paste Ready)',
+					desc: 'Curated sets of prompts organized by use case. Each prompt tells you which AI model to use, when to reach for it, and includes example output. No filler. 10-15 tested prompts per pack.',
+					examples: 'Business Operations: proposals, meeting notes, competitive analysis, invoicing, status reports. Content Creation: tweets, threads, newsletters, YouTube scripts, repurposing. Side Projects: specs, landing pages, launch checklists. Family: stories, planners, learning tools.',
 					badge: 'bg-yellow-light',
 					shadow: 'neo-card-yellow'
 				},
 				{
 					num: '03',
-					title: 'Template Vault ($300+ value)',
-					desc: 'Plug-and-play systems you can fork and start using in minutes. Each one is built from a real workflow, not a hypothetical.',
-					examples: 'Content Pipeline. GTM Launch Kit (75+ directories). Product Spec Template. Competitive Analysis Framework. Client Onboarding System.',
+					title: 'Honest Tool Breakdowns',
+					desc: 'Monthly roundups of the AI tools Ben actually uses, what they cost, and whether they\'re worth it. No affiliate links. No sponsorships. Just what works and what doesn\'t, from someone who uses these tools daily across client work, side projects, and family life.',
+					examples: 'The 12 AI tools I actually pay for (and the monthly damage). Best free AI tools for small business. When to use Claude vs ChatGPT vs Gemini. Tool deals that offset your membership cost.',
 					badge: 'bg-pink-light',
 					shadow: 'neo-card-pink'
 				},
 				{
 					num: '04',
-					title: 'GitHub Repos You Can Fork and Ship',
-					desc: 'Members-only repositories with functional code. Not toy demos. Starter kits, automation scripts, and boilerplates you can actually build on.',
-					examples: 'Chrome extension starter. n8n workflow templates. API boilerplate. Content automation scripts.',
+					title: 'Community + Direct Access to Ben',
+					desc: 'Active channels where members ask questions, share wins, and help each other. Ben is present daily. Not a ghost town. Not a content dump. A room where you can ask "how do I do this?" and get an answer.',
+					examples: 'Help channel with real responses. Wins channel to share what you built. Monthly live sessions. All recordings archived for members.',
 					badge: 'bg-cyan-light',
 					shadow: 'neo-card-cyan'
 				},
 				{
 					num: '05',
-					title: 'Tool Deals and Honest Roundups',
-					desc: 'Monthly "best AI tools" roundup with real assessments. Exclusive discounts negotiated with tool companies. Designed to save you more than the membership costs.',
-					examples: 'Monthly tool roundup with pricing/verdict. Lifetime deal alerts. Model comparison when new releases drop.',
+					title: 'Exclusive Tool Deals',
+					desc: 'Discounts negotiated with AI tool companies, exclusively for members. The goal: the deals alone save you more than the $29/mo membership. The tutorials, prompts, and community are free upside.',
+					examples: 'Discounts on the tools Ben recommends in his roundups. Lifetime deal alerts before they go public. Partner pricing on AI platforms.',
 					badge: 'bg-yellow-light',
 					shadow: 'neo-card-yellow'
 				},
 				{
 					num: '06',
-					title: 'Community, Livestreams, AMAs',
-					desc: 'Topic channels for tools, building, wins, help, and off-topic. Ben is present daily. Monthly AMAs, build sessions, and office hours. All recordings archived.',
-					examples: 'Live build sessions. Monthly AMA. Help channel with fast responses. Wins channel to share what you shipped.',
+					title: 'Advanced Resources (For Builders)',
+					desc: 'For members who want to go deeper: automation workflows, starter code, and technical breakdowns. This isn\'t the main focus, but it\'s here for people who want it.',
+					examples: 'n8n workflow templates. Automation scripts. Technical deep-dives. Code walkthroughs from real products.',
 					badge: 'bg-pink-light',
 					shadow: 'neo-card-pink'
 				}
@@ -395,20 +387,20 @@
 
 		<div class="reveal mt-10 rounded-2xl border-3 border-ink bg-surface p-8 shadow-[8px_8px_0_theme(--color-cyan)] md:p-12">
 			<p class="text-lg leading-relaxed text-ink md:text-xl">
-				Ben is 37. Two young sons. Long Island. Full-time at a tech startup Monday through Thursday. Side consulting business doing AI automation for real companies. Builds products on nights and weekends.
+				Ben is 37. Two young sons. Long Island. Full-time at a tech startup Monday through Thursday. Runs a consulting business doing AI automation for real companies. Builds products on nights and weekends.
 			</p>
 			<p class="mt-6 font-display text-2xl font-bold text-ink md:text-3xl">He uses AI for all of it.</p>
 			<p class="mt-4 text-muted leading-relaxed">
-				Not as a hobby. Not as a thought experiment. As the core lever behind his work, his side business, his family life, and his creative projects. Every guide, template, and prompt in the community comes from something he actually built and shipped.
+				Not as a hobby. As the core lever behind his work, his side business, his family life, and his creative projects. He built a bedtime story generator for his kids. He built document intelligence pipelines for enterprise clients. He built consumer products used by thousands of people. AI is involved in every layer.
 			</p>
 		</div>
 
 		<div class="mt-6 grid gap-5 md:grid-cols-4">
 			{#each [
-				{ label: 'Clients', text: 'Document intelligence pipelines. AI-powered brand sites. Automation saving companies dozens of hours/week.', color: 'bg-cyan-light', shadow: 'neo-card-cyan' },
-				{ label: 'Family', text: 'Bedtime story generator. Activity engine. Birthday app that killed 47 text threads.', color: 'bg-yellow-light', shadow: 'neo-card-yellow' },
-				{ label: 'Internet', text: 'BookmarkIQ. Retell. Open-source tools used by thousands of people.', color: 'bg-pink-light', shadow: 'neo-card-pink' },
-				{ label: 'Fun', text: 'Particle systems. Spatial search. An AI operator named Cortana running 24/7.', color: 'bg-green-light', shadow: 'neo-card' }
+				{ label: 'Clients', text: 'Document intelligence pipelines. AI-powered brand sites. Automation saving companies dozens of hours per week.', color: 'bg-cyan-light', shadow: 'neo-card-cyan' },
+				{ label: 'Products', text: 'Retell (video intelligence). BookmarkIQ. Open-source tools used by thousands of people.', color: 'bg-yellow-light', shadow: 'neo-card-yellow' },
+				{ label: 'Family', text: 'Bedtime story generator. Activity engine. Birthday app. Learning tools. AI for the fun stuff too.', color: 'bg-pink-light', shadow: 'neo-card-pink' },
+				{ label: 'Meta', text: 'An AI operator named Cortana running 24/7. Automations monitoring, posting, and managing systems while he sleeps.', color: 'bg-green-light', shadow: 'neo-card' }
 			] as card, i}
 				<div class="reveal neo-card {card.shadow} rounded-xl p-5" style="transition-delay: {i * 60}ms;">
 					<span class="inline-block rounded-md border-2 border-ink {card.color} px-2.5 py-0.5 font-mono text-[0.65rem] font-bold uppercase tracking-wider">{card.label}</span>
@@ -418,7 +410,7 @@
 		</div>
 
 		<p class="reveal mt-8 text-center text-muted">
-			Not "AI for marketing" or "AI for devs." <span class="font-semibold text-ink">AI for everything.</span> That range is what the community is built on.
+			Not "AI for marketing" or "AI for devs." <span class="font-semibold text-ink">AI for your whole life.</span> That range is what makes this different.
 		</p>
 	</div>
 </section>
@@ -457,13 +449,13 @@
 					<div class="px-8 py-8">
 						<ul class="space-y-3 text-left text-sm">
 							{#each [
-								'Full library access (guides, prompts, templates, repos)',
+								'Full library: tutorials, prompt packs, tool guides',
 								'Permanent price lock at $29/mo',
-								'Free lifetime access on future platforms',
+								'Community access with direct access to Ben',
+								'Exclusive tool deals and partner discounts',
 								'Founding member badge',
-								'Discounts on all future paid products',
-								'Direct input on what gets built next',
-								'Early access to BookmarkIQ, Retell, and every future product'
+								'Input on what gets built next',
+								'Early access to all future products'
 							] as perk}
 								<li class="flex gap-3">
 									<span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-cyan-light text-xs font-bold">&#10003;</span>
@@ -491,11 +483,11 @@
 				</div>
 				<div class="neo-card neo-card-yellow rounded-xl p-6">
 					<h4 class="font-display text-lg font-bold text-ink">The library only gets bigger</h4>
-					<p class="mt-2 text-sm text-muted">New guides, prompts, templates, and repos are added every week based on real work. The value compounds. Your price stays the same.</p>
+					<p class="mt-2 text-sm text-muted">New tutorials, prompts, and tool guides are added every week. The value compounds. Your price stays the same.</p>
 				</div>
 				<div class="neo-card neo-card-pink rounded-xl p-6">
 					<h4 class="font-display text-lg font-bold text-ink">Tool deals offset the cost</h4>
-					<p class="mt-2 text-sm text-muted">Exclusive discounts negotiated with AI tool companies. The goal is for the perks alone to save you more than $29/mo. The library and community are free upside.</p>
+					<p class="mt-2 text-sm text-muted">Exclusive discounts negotiated with AI tool companies. The goal is for the deals alone to save you more than $29/mo. Everything else is free upside.</p>
 				</div>
 			</div>
 		</div>
@@ -541,10 +533,10 @@
 	<div class="mx-auto max-w-3xl px-6 text-center">
 		<div class="reveal">
 			<h2 class="font-display text-3xl font-bold text-ink md:text-5xl">
-				Stop watching. Start shipping.
+				Learn AI. Use it everywhere.
 			</h2>
 			<p class="mt-4 text-lg text-muted">
-				50 founding spots. Full library access. Partner perks. Direct access to Ben. $29/mo locked forever.
+				50 founding spots. Tutorials, prompts, tool deals, and a community. Direct access to Ben. $29/mo locked forever.
 			</p>
 			<a
 				href="#founding"
