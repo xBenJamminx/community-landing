@@ -171,27 +171,27 @@
 				{
 					problem: 'You watch a 20-minute YouTube tutorial',
 					pain: 'Get inspired, then realize you have no idea how to actually implement it.',
-					solution: 'Open a build guide with the exact prompts, configs, and steps. Follow along. Ship the thing.'
+					solution: 'Every guide in the library comes from a real project with the actual prompts and configs attached. You walk away with something you built, not something you watched someone else build.'
 				},
 				{
 					problem: 'You save 47 AI Twitter threads',
 					pain: 'Never open any of them again. They rot in your bookmarks.',
-					solution: 'Open the prompt library. Find the one you need by category. Copy, paste, get results.'
+					solution: 'A tested, organized prompt library that replaces the bookmark graveyard. Each prompt is annotated with when to use it, which model it works best with, and what to expect.'
 				},
 				{
 					problem: 'You spend 3 hours researching which AI tool to use',
 					pain: 'End up more confused than when you started. Still haven\'t picked one.',
-					solution: 'Read the monthly honest roundup. Pick the right tool in 5 minutes. Move on.'
+					solution: 'Monthly roundups with honest assessments from someone who actually uses these tools for client work, side projects, and family life. No affiliate bias. Just what works and what doesn\'t.'
 				},
 				{
 					problem: 'You get stuck and have nobody to ask',
 					pain: 'Google it for an hour. Try 4 different things. Give up. Go back to doing it manually.',
-					solution: 'Post in the community. Get an answer from someone who already solved it. Back on track in minutes.'
+					solution: 'A community of people solving the same kinds of problems, with a founder who responds daily. Not a ghost town Discord. A room where questions actually get answered.'
 				},
 				{
 					problem: 'You see people shipping AI projects every week',
 					pain: 'Wonder what you\'re missing. Feel further behind every day.',
-					solution: 'Fork a template from the vault. Customize it. Ship your own thing this weekend.'
+					solution: 'Templates and starter repos you can fork and make your own. The difference between "I should build something" and actually having something live by Sunday.'
 				}
 			] as row, i}
 				<div class="reveal grid gap-0 md:grid-cols-2" style="transition-delay: {i * 60}ms;">
