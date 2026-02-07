@@ -8,11 +8,11 @@
 	--color-muted: #71717a;
 	--color-text: #d4d4d8;
 	--color-heading: #fafafa;
-	--color-accent: #f59e0b;
-	--color-accent-light: #fbbf24;
-	--color-accent-glow: #d97706;
-	--color-accent-subtle: #78350f;
-	--color-warm: #fb923c;
+	--color-accent: #06b6d4;
+	--color-accent-light: #22d3ee;
+	--color-accent-glow: #0891b2;
+	--color-accent-subtle: #164e63;
+	--color-warm: #0891b2;
 	--font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -155,8 +155,8 @@ body {
 
 .card-hover:hover {
 	transform: translateY(-4px);
-	box-shadow: 0 12px 40px rgba(245, 158, 11, 0.08);
-	border-color: rgba(245, 158, 11, 0.2);
+	box-shadow: 0 12px 40px rgba(6, 182, 212, 0.08);
+	border-color: rgba(6, 182, 212, 0.2);
 }
 
 /* Smooth FAQ accordion */
