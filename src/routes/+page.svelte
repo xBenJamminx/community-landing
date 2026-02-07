@@ -234,40 +234,40 @@
 				Who this is for
 			</div>
 			<h2 class="mt-6 font-display text-3xl font-bold leading-tight text-ink md:text-5xl">
-				You have 45 minutes after the kids go to bed. Make them count.
+				You're running a business, building on the side, and raising a family. AI should help with all three.
 			</h2>
 		</div>
 
 		<div class="mt-12 grid gap-5 md:grid-cols-3">
 			{#each [
 				{
-					who: 'The Busy Parent',
+					who: 'Business Owners',
 					badge: 'bg-cyan-light',
 					shadow: 'neo-card-cyan',
 					lines: [
-						'You want to use AI but don\'t have 6 hours to figure it out',
-						'You need shortcuts that work on the first try',
-						'You\'d rather spend your free time with your family than debugging prompts'
+						'You know AI can save you time and money but don\'t know where to start',
+						'You\'re tired of hype and want practical, proven workflows',
+						'You need systems you can implement this week, not next quarter'
 					]
 				},
 				{
-					who: 'The Side Builder',
+					who: 'Side Builders',
 					badge: 'bg-yellow-light',
 					shadow: 'neo-card-yellow',
 					lines: [
-						'You have a full-time job and a project on the side',
-						'You need systems to move fast with limited hours',
-						'You want to see how someone else is actually doing it'
+						'You have a full-time job and a project you\'re building after hours',
+						'You need to move fast with limited time and no team',
+						'You want to see how someone else is actually shipping solo'
 					]
 				},
 				{
-					who: 'The Small Biz Owner',
+					who: 'Parents Who Build',
 					badge: 'bg-pink-light',
 					shadow: 'neo-card-pink',
 					lines: [
-						'You know AI can save you time and money',
-						'You don\'t know where to start or what tools are worth it',
-						'You want practical help, not hype'
+						'You\'re a business owner or side builder who also has kids',
+						'You have 45 minutes after bedtime to make progress',
+						'You need shortcuts that work on the first try so you can be present'
 					]
 				}
 			] as segment, i}
