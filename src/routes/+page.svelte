@@ -261,13 +261,13 @@
 					]
 				},
 				{
-					who: 'Parents Who Build',
+					who: 'Busy Parents',
 					badge: 'bg-pink-light',
 					shadow: 'neo-card-pink',
 					lines: [
-						'You\'re a business owner or side builder who also has kids',
-						'You have 45 minutes after bedtime to make progress',
-						'You need shortcuts that work on the first try so you can be present'
+						'You want to use AI to make family life easier, more fun, or more organized',
+						'Bedtime stories, activity generators, birthday planners, learning tools for your kids',
+						'You have limited free time and want things that work on the first try'
 					]
 				}
 			] as segment, i}
