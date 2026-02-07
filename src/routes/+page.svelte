@@ -153,53 +153,76 @@
 </div>
 
 <!-- ============================================ -->
-<!-- THE PROBLEM -->
+<!-- PROBLEM / SOLUTION (side by side) -->
 <!-- ============================================ -->
 <section class="py-20 md:py-28">
-	<div class="mx-auto max-w-4xl px-6">
+	<div class="mx-auto max-w-5xl px-6">
 		<div class="reveal">
 			<div class="inline-block rounded-lg border-3 border-ink bg-pink-light px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-ink shadow-[3px_3px_0_#000]">
-				The problem
+				Sound familiar?
 			</div>
 			<h2 class="mt-6 font-display text-3xl font-bold leading-tight text-ink md:text-5xl">
 				You're drowning in AI content. But nothing you can actually use.
 			</h2>
 		</div>
 
-		<div class="mt-12 grid gap-5 md:grid-cols-2">
+		<div class="mt-12 space-y-4">
 			{#each [
-				{ problem: 'You watch a 20-minute YouTube tutorial', result: 'Get inspired, then realize you have no idea how to actually implement it' },
-				{ problem: 'You save 47 AI Twitter threads', result: 'Never open any of them again. They rot in your bookmarks.' },
-				{ problem: 'You try ChatGPT for "something useful"', result: 'Get a generic response. Give up. Go back to doing it manually.' },
-				{ problem: 'You see people shipping AI projects daily', result: 'Wonder what you\'re missing. Feel further behind every week.' }
-			] as item, i}
-				<div class="reveal neo-card rounded-xl p-6" style="transition-delay: {i * 60}ms;">
-					<p class="font-semibold text-ink">{item.problem}</p>
-					<p class="mt-2 text-sm text-muted">{item.result}</p>
+				{
+					problem: 'You watch a 20-minute YouTube tutorial',
+					pain: 'Get inspired, then realize you have no idea how to actually implement it.',
+					solution: 'Open a build guide with the exact prompts, configs, and steps. Follow along. Ship the thing.'
+				},
+				{
+					problem: 'You save 47 AI Twitter threads',
+					pain: 'Never open any of them again. They rot in your bookmarks.',
+					solution: 'Open the prompt library. Find the one you need by category. Copy, paste, get results.'
+				},
+				{
+					problem: 'You spend 3 hours researching which AI tool to use',
+					pain: 'End up more confused than when you started. Still haven\'t picked one.',
+					solution: 'Read the monthly honest roundup. Pick the right tool in 5 minutes. Move on.'
+				},
+				{
+					problem: 'You get stuck and have nobody to ask',
+					pain: 'Google it for an hour. Try 4 different things. Give up. Go back to doing it manually.',
+					solution: 'Post in the community. Get an answer from someone who already solved it. Back on track in minutes.'
+				},
+				{
+					problem: 'You see people shipping AI projects every week',
+					pain: 'Wonder what you\'re missing. Feel further behind every day.',
+					solution: 'Fork a template from the vault. Customize it. Ship your own thing this weekend.'
+				}
+			] as row, i}
+				<div class="reveal grid gap-0 md:grid-cols-2" style="transition-delay: {i * 60}ms;">
+					<!-- Problem side -->
+					<div class="neo-card rounded-t-xl md:rounded-l-xl md:rounded-tr-none border-b-0 md:border-b-3 md:border-r-0 bg-surface p-6">
+						<div class="mb-2 inline-block rounded-md border-2 border-ink/20 bg-pink-light px-2 py-0.5 font-mono text-[0.6rem] font-bold uppercase tracking-wider text-ink/60">Problem</div>
+						<p class="font-semibold text-ink">{row.problem}</p>
+						<p class="mt-1.5 text-sm text-muted">{row.pain}</p>
+					</div>
+					<!-- Solution side -->
+					<div class="neo-card rounded-b-xl md:rounded-r-xl md:rounded-bl-none bg-cyan-bg p-6">
+						<div class="mb-2 inline-block rounded-md border-2 border-ink bg-cyan px-2 py-0.5 font-mono text-[0.6rem] font-bold uppercase tracking-wider">Solution</div>
+						<p class="text-sm font-medium leading-relaxed text-ink">{row.solution}</p>
+					</div>
 				</div>
 			{/each}
 		</div>
 
-		<div class="reveal mt-10 rounded-2xl border-3 border-ink bg-cyan-bg p-8 shadow-[6px_6px_0_theme(--color-cyan)]">
-			<p class="text-lg font-semibold text-ink md:text-xl">
+		<div class="reveal mt-10 rounded-2xl border-3 border-ink bg-yellow-bg p-8 text-center shadow-[6px_6px_0_theme(--color-yellow)]">
+			<p class="font-display text-xl font-bold text-ink md:text-2xl">
 				The gap isn't knowledge. It's execution.
 			</p>
 			<p class="mt-2 text-muted">
-				You don't need another tutorial. You need the actual files, prompts, and systems that someone is already using to get results. Then you need a room full of people doing the same thing.
+				You don't need another tutorial. You need the actual files, prompts, and systems someone is already using to get results.
 			</p>
+			<a href="#founding" class="neo-btn mt-6 inline-flex rounded-xl bg-cyan px-7 py-3 text-sm text-ink">
+				Claim your founding spot &rarr;
+			</a>
 		</div>
 	</div>
 </section>
-
-<!-- Mid-page CTA -->
-<div class="border-y-3 border-ink bg-yellow-bg py-10 text-center">
-	<div class="reveal mx-auto max-w-2xl px-6">
-		<p class="font-display text-xl font-bold text-ink md:text-2xl">Stop collecting tutorials. Start shipping.</p>
-		<a href="#founding" class="neo-btn mt-5 inline-flex rounded-xl bg-cyan px-7 py-3 text-sm text-ink">
-			Claim your founding spot &rarr;
-		</a>
-	</div>
-</div>
 
 <!-- ============================================ -->
 <!-- WHO THIS IS FOR (Audience Segments) -->
@@ -400,56 +423,6 @@
 	</div>
 </section>
 
-<!-- ============================================ -->
-<!-- PROBLEM/SOLUTION COMPARISON -->
-<!-- ============================================ -->
-<section class="border-y-3 border-ink bg-bg-alt py-20 md:py-28">
-	<div class="mx-auto max-w-4xl px-6">
-		<div class="reveal text-center">
-			<h2 class="font-display text-3xl font-bold text-ink md:text-5xl">
-				What changes when you join.
-			</h2>
-		</div>
-
-		<div class="mt-12 grid gap-6 md:grid-cols-2">
-			<div class="reveal neo-card rounded-2xl p-8">
-				<div class="mb-5 inline-block rounded-lg border-2 border-ink bg-pink-light px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider">Without</div>
-				<ul class="space-y-4">
-					{#each [
-						'Watch tutorials, never implement',
-						'Bookmark threads, never revisit',
-						'Try AI tools alone, give up when stuck',
-						'Feel further behind every week',
-						'Spend hours researching which tool to use'
-					] as item}
-						<li class="flex gap-3 text-[0.95rem] text-muted">
-							<span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 border-ink/20 bg-surface text-xs text-ink/30">&#10007;</span>
-							{item}
-						</li>
-					{/each}
-				</ul>
-			</div>
-
-			<div class="reveal neo-card rounded-2xl bg-cyan-bg p-8" style="transition-delay: 100ms;">
-				<div class="mb-5 inline-block rounded-lg border-2 border-ink bg-cyan px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider">With BuildsByBen</div>
-				<ul class="space-y-4">
-					{#each [
-						'Open a guide, follow the steps, ship the thing',
-						'Fork a template, customize it, use it today',
-						'Get stuck, ask in the community, get unstuck in minutes',
-						'See what others are building and steal their approach',
-						'Read the honest roundup and pick the right tool in 5 minutes'
-					] as item}
-						<li class="flex gap-3 text-[0.95rem]">
-							<span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-surface text-xs font-bold">&#10003;</span>
-							{item}
-						</li>
-					{/each}
-				</ul>
-			</div>
-		</div>
-	</div>
-</section>
 
 <!-- ============================================ -->
 <!-- FOUNDING MEMBERS -->
