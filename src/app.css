@@ -8,10 +8,14 @@
 	--color-muted: #555555;
 	--color-cyan: #06b6d4;
 	--color-cyan-light: #a5f3fc;
+	--color-cyan-bg: #cffafe;
 	--color-yellow: #facc15;
 	--color-yellow-light: #fef9c3;
+	--color-yellow-bg: #fefce8;
 	--color-pink: #f472b6;
 	--color-pink-light: #fce7f3;
+	--color-green: #22c55e;
+	--color-green-light: #dcfce7;
 	--font-display: 'Syne', system-ui, sans-serif;
 	--font-sans: 'Inter', system-ui, sans-serif;
 	--font-mono: 'JetBrains Mono', monospace;
@@ -39,6 +43,28 @@ body {
 .neo-card:hover {
 	transform: translate(-2px, -2px);
 	box-shadow: 8px 8px 0 var(--color-ink);
+}
+
+/* Color shadow variants */
+.neo-card-cyan {
+	box-shadow: 6px 6px 0 var(--color-cyan);
+}
+.neo-card-cyan:hover {
+	box-shadow: 8px 8px 0 var(--color-cyan);
+}
+
+.neo-card-yellow {
+	box-shadow: 6px 6px 0 var(--color-yellow);
+}
+.neo-card-yellow:hover {
+	box-shadow: 8px 8px 0 var(--color-yellow);
+}
+
+.neo-card-pink {
+	box-shadow: 6px 6px 0 var(--color-pink);
+}
+.neo-card-pink:hover {
+	box-shadow: 8px 8px 0 var(--color-pink);
 }
 
 /* Neo-brutalist button */
@@ -96,5 +122,19 @@ body {
 }
 
 .animate-marquee {
-	animation: marquee 20s linear infinite;
+	animation: marquee 25s linear infinite;
+}
+
+/* Stacked card effect */
+.stacked-card {
+	position: relative;
+}
+.stacked-card::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border: 3px solid var(--color-ink);
+	border-radius: inherit;
+	transform: translate(10px, 10px);
+	z-index: -1;
 }
