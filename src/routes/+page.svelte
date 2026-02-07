@@ -10,76 +10,67 @@
 
 	onMount(() => {
 		mounted = true;
-
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('visible');
-					}
+					if (entry.isIntersecting) entry.target.classList.add('visible');
 				});
 			},
-			{ threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+			{ threshold: 0.1 }
 		);
-
 		document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
 		return () => observer.disconnect();
 	});
 
 	const features = [
 		{
-			label: 'Library',
-			title: 'Guides and Breakdowns',
-			desc: 'Written from real projects. How-tos, build breakdowns, tool deep dives, workflow walkthroughs. Every guide includes the prompts, configs, and steps to actually do the thing yourself.'
+			title: 'Guides + Breakdowns',
+			desc: 'Written from real projects. Prompts, configs, steps. Not theory.',
+			color: 'bg-cyan-light'
 		},
 		{
-			label: 'Prompts',
 			title: 'Prompt Library',
-			desc: 'Organized by category: content creation, research, product planning, client work, model optimization. Each prompt includes context on when to use it and which model works best.'
+			desc: 'Organized by use case. Each one tested and annotated.',
+			color: 'bg-yellow-light'
 		},
 		{
-			label: 'Templates',
 			title: 'Template Vault',
-			desc: 'Plug-and-play systems you can fork. Content Pipeline, GTM Launch Kit (75+ directories), Product Spec Template, Competitive Analysis Framework, and more added regularly.'
+			desc: 'Fork and use in minutes. Content pipelines, GTM kits, analysis frameworks.',
+			color: 'bg-pink-light'
 		},
 		{
-			label: 'Code',
 			title: 'GitHub Repos',
-			desc: 'Members-only repositories you can fork and run. Starter kits, automation scripts, boilerplates. Not toy demos. Functional code you can build on.'
+			desc: 'Members-only code you can fork and run. Starter kits, scripts, boilerplates.',
+			color: 'bg-cyan-light'
 		},
 		{
-			label: 'Curation',
-			title: 'Roundups and Deals',
-			desc: 'Monthly "best AI tools" roundup with honest assessments. Model comparisons when new releases drop. Exclusive tool discounts designed to offset the membership cost entirely.'
+			title: 'Tool Deals + Roundups',
+			desc: 'Monthly honest assessments. Exclusive discounts. Designed to offset the membership.',
+			color: 'bg-yellow-light'
 		},
 		{
-			label: 'Community',
-			title: 'Chat, Livestreams, AMAs',
-			desc: 'Topic channels for tools, building, wins, help, and off-topic. Build sessions, monthly AMAs, office hours. All recordings stay in the community.'
+			title: 'Chat, AMAs, Livestreams',
+			desc: 'Daily founder presence. Monthly office hours. All recordings archived.',
+			color: 'bg-pink-light'
 		}
 	];
 
 	const faqs = [
 		{
 			q: 'Is this a course?',
-			a: "No. It's a living library and community. New guides, prompts, templates, and repos are added regularly based on real work. No curriculum, no start date, no end date. You get access to everything the moment you join."
+			a: "No. It's a living library. New resources added regularly based on real work. No curriculum, no timeline. You get everything the moment you join."
 		},
 		{
 			q: 'How is this different from free AI content?',
-			a: 'Free content gives you the concept. The community gives you the execution. The actual prompts, the exact configs, the step-by-step walkthroughs, the templates you can fork, and the support to get unstuck.'
+			a: 'Free content gives you the concept. This gives you the execution: actual prompts, exact configs, templates you can fork, and people to ask when you get stuck.'
 		},
 		{
 			q: 'Do I need to be technical?',
-			a: "No. Most guides are written for people who are comfortable using apps and tools but aren't developers. If you can use Notion, Airtable, or a Chrome extension, you can use what's in here."
-		},
-		{
-			q: "How much of Ben's time goes into this?",
-			a: "Ben is in the community daily. Responds to questions, shares what he's working on, drops resources as he builds them. Monthly AMAs and livestreams on a regular cadence."
+			a: "No. If you can use Notion, Airtable, or a Chrome extension, you can use everything in here."
 		},
 		{
 			q: 'Can I cancel anytime?',
-			a: 'Yes. Monthly billing, cancel whenever. No contracts. Founding member pricing is locked as long as you stay subscribed.'
+			a: 'Yes. Monthly billing. No contracts. Founding pricing locked as long as you stay.'
 		}
 	];
 </script>
@@ -89,112 +80,104 @@
 </svelte:head>
 
 <!-- Nav -->
-<nav class="fixed top-0 z-50 w-full bg-midnight/60 backdrop-blur-2xl">
-	<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-		<span class="font-display text-xl font-bold tracking-tight text-heading">Builds<span class="text-accent">By</span>Ben</span>
-		<a
-			href="#founding"
-			class="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-midnight transition-all duration-300 hover:bg-accent-light hover:shadow-lg hover:shadow-accent/20"
-		>
+<nav class="fixed top-0 z-50 w-full border-b-3 border-ink bg-bg/90 backdrop-blur-md">
+	<div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+		<span class="font-display text-2xl font-bold text-ink">BuildsByBen</span>
+		<a href="#founding" class="neo-btn rounded-lg bg-cyan px-5 py-2.5 text-sm text-ink">
 			Join Now
 		</a>
 	</div>
 </nav>
 
 <!-- Hero -->
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-	<!-- Background glow -->
-	<div class="pointer-events-none absolute inset-0">
-		<div class="animate-glow-pulse absolute top-1/4 left-1/3 h-[500px] w-[500px] rounded-full bg-accent/8 blur-[120px]"></div>
-		<div class="animate-glow-pulse absolute right-1/4 bottom-1/3 h-[400px] w-[400px] rounded-full bg-accent-glow/6 blur-[100px]" style="animation-delay: 2.5s;"></div>
-	</div>
+<section class="relative overflow-hidden pt-28 pb-16 md:pt-40 md:pb-24">
+	<!-- Decorative shapes -->
+	<div class="pointer-events-none absolute top-20 right-10 h-32 w-32 rotate-12 rounded-xl border-3 border-ink bg-yellow md:h-48 md:w-48" style="opacity: 0.4;"></div>
+	<div class="pointer-events-none absolute bottom-10 left-10 h-24 w-24 -rotate-6 rounded-full border-3 border-ink bg-pink md:h-36 md:w-36" style="opacity: 0.3;"></div>
 
-	<div class="relative mx-auto max-w-5xl px-6 pt-32 pb-24 text-center">
-		<div class="{mounted ? 'animate-fade-up' : 'opacity-0'}">
-			<span class="label-mono">A living library for builders</span>
+	<div class="relative mx-auto max-w-4xl px-6">
+		<div class="{mounted ? 'reveal visible' : 'opacity-0'}">
+			<div class="mb-6 inline-block rounded-lg border-3 border-ink bg-cyan px-4 py-1.5 font-mono text-xs font-medium uppercase tracking-wider text-ink shadow-[3px_3px_0_#000]">
+				A living library for builders
+			</div>
 		</div>
 
-		<h1 class="{mounted ? 'animate-fade-up delay-100' : 'opacity-0'} mt-8 font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-heading md:text-7xl lg:text-8xl">
-			AI for your<br />
-			<span class="text-gradient">whole life.</span>
+		<h1 class="{mounted ? 'reveal visible' : 'opacity-0'} font-display text-5xl font-extrabold leading-[1.05] text-ink md:text-7xl lg:text-[5.5rem]">
+			AI for your<br />whole life.
 		</h1>
 
-		<p class="{mounted ? 'animate-fade-up delay-200' : 'opacity-0'} mx-auto mt-8 max-w-xl text-lg leading-relaxed text-muted md:text-xl">
+		<p class="{mounted ? 'reveal visible' : 'opacity-0'} mt-6 max-w-xl text-lg leading-relaxed text-muted md:text-xl">
 			Guides, prompts, templates, repos, and a community of people using AI for work, family, side projects, and the stuff in between.
 		</p>
 
-		<div class="{mounted ? 'animate-fade-up delay-300' : 'opacity-0'} mt-12 flex flex-col items-center gap-4">
-			<a
-				href="#founding"
-				class="group inline-flex items-center rounded-lg bg-accent px-8 py-4 text-base font-semibold text-midnight transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/20"
-			>
-				Become a founding member
-				<span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+		<div class="{mounted ? 'reveal visible' : 'opacity-0'} mt-10 flex flex-wrap items-center gap-4">
+			<a href="#founding" class="neo-btn rounded-xl bg-cyan px-8 py-4 text-base text-ink">
+				Become a founding member &rarr;
 			</a>
-			<span class="font-mono text-xs tracking-wide text-muted/60">50 spots. $29/mo locked forever.</span>
+			<span class="font-mono text-sm text-muted">50 spots &middot; $29/mo forever</span>
 		</div>
 	</div>
 </section>
 
-<!-- Shimmer divider -->
-<div class="shimmer-line"></div>
-
-<!-- Numbers -->
-<section class="py-20 md:py-28">
-	<div class="mx-auto grid max-w-4xl grid-cols-2 gap-8 px-6 md:grid-cols-4">
-		{#each [
-			{ num: '$300+', label: 'in templates' },
-			{ num: '75+', label: 'launch directories' },
-			{ num: '9', label: 'resource categories' },
-			{ num: 'Daily', label: 'founder presence' }
-		] as stat, i}
-			<div class="reveal text-center" style="transition-delay: {i * 100}ms;">
-				<div class="font-display text-3xl font-bold text-heading md:text-4xl">{stat.num}</div>
-				<div class="mt-2 text-sm text-muted">{stat.label}</div>
-			</div>
+<!-- Scrolling marquee -->
+<div class="overflow-hidden border-y-3 border-ink bg-ink py-3">
+	<div class="animate-marquee flex w-max gap-8 whitespace-nowrap">
+		{#each Array(2) as _}
+			<span class="font-display text-lg font-bold text-bg">$300+ IN TEMPLATES</span>
+			<span class="text-cyan">/</span>
+			<span class="font-display text-lg font-bold text-bg">75+ LAUNCH DIRECTORIES</span>
+			<span class="text-cyan">/</span>
+			<span class="font-display text-lg font-bold text-bg">9 RESOURCE CATEGORIES</span>
+			<span class="text-cyan">/</span>
+			<span class="font-display text-lg font-bold text-bg">DAILY FOUNDER PRESENCE</span>
+			<span class="text-cyan">/</span>
+			<span class="font-display text-lg font-bold text-bg">CANCEL ANYTIME</span>
+			<span class="text-cyan">/</span>
 		{/each}
 	</div>
-</section>
+</div>
 
 <!-- Who This Is For -->
-<section class="py-20 md:py-32">
+<section class="py-20 md:py-28">
 	<div class="mx-auto max-w-5xl px-6">
-		<div class="reveal mx-auto max-w-3xl text-center">
-			<span class="label-mono">Who this is for</span>
-			<h2 class="mt-6 font-display text-3xl font-bold leading-tight text-heading md:text-5xl lg:text-6xl">
-				You know AI matters. You just don't have <span class="text-gradient">6 hours to figure it out.</span>
+		<div class="reveal mx-auto max-w-3xl">
+			<h2 class="font-display text-3xl font-bold leading-tight text-ink md:text-5xl">
+				You know AI matters. You just don't have 6 hours to figure it out.
 			</h2>
+			<p class="mt-4 text-lg text-muted">
+				This is for the person with a full-time job, a family, maybe a side project, and about 45 minutes after the kids go to bed.
+			</p>
 		</div>
 
-		<div class="mt-20 grid gap-6 md:grid-cols-2">
-			<div class="reveal card-elevated rounded-2xl p-8 md:p-10">
-				<span class="label-mono">This is for you</span>
-				<ul class="mt-6 space-y-4 text-text">
+		<div class="mt-14 grid gap-6 md:grid-cols-2">
+			<div class="reveal neo-card rounded-2xl p-8">
+				<h3 class="mb-5 font-display text-xl font-bold text-ink">This is for you if:</h3>
+				<ul class="space-y-3">
 					{#each [
-						'A parent who wants to get more done so you can actually be present',
-						'A full-time employee building something on the side',
-						'A small business owner who knows AI can help but doesn\'t know where to start',
-						'A freelancer, creator, or marketer who wants practical shortcuts',
-						'Someone who wants to use AI beyond basic chatbot conversations'
+						'A parent who wants to get more done so you can be present',
+						'A full-time employee building on the side',
+						'A small business owner who knows AI can help',
+						'A freelancer or creator who wants practical shortcuts',
+						'Someone who wants AI beyond chatbot conversations'
 					] as item}
-						<li class="flex gap-3 text-[0.95rem] leading-relaxed">
-							<span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs text-accent">&#10003;</span>
+						<li class="flex gap-3 text-[0.95rem]">
+							<span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-cyan-light text-sm font-bold">&#10003;</span>
 							{item}
 						</li>
 					{/each}
 				</ul>
 			</div>
 
-			<div class="reveal card-elevated rounded-2xl p-8 md:p-10" style="transition-delay: 150ms;">
-				<span class="label-mono" style="color: var(--color-muted);">Not for you</span>
-				<ul class="mt-6 space-y-4 text-muted">
+			<div class="reveal neo-card rounded-2xl p-8" style="transition-delay: 100ms;">
+				<h3 class="mb-5 font-display text-xl font-bold text-ink">Not for you if:</h3>
+				<ul class="space-y-3 text-muted">
 					{#each [
-						'Looking for a get-rich-quick AI hustle community',
-						'A developer who already lives in VS Code and reads model papers for fun',
-						'Expecting a course with a start and end date'
+						'Looking for a get-rich-quick AI hustle',
+						'A dev who reads model papers for fun',
+						'Expecting a course with start and end dates'
 					] as item}
-						<li class="flex gap-3 text-[0.95rem] leading-relaxed">
-							<span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/5 text-xs text-muted">&#10007;</span>
+						<li class="flex gap-3 text-[0.95rem]">
+							<span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border-2 border-ink/30 bg-pink-light text-sm font-bold text-ink/40">&#10007;</span>
 							{item}
 						</li>
 					{/each}
@@ -205,116 +188,97 @@
 </section>
 
 <!-- What You Get -->
-<section class="relative py-20 md:py-32">
-	<!-- Subtle background shift -->
-	<div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/50 to-transparent"></div>
-
-	<div class="relative mx-auto max-w-5xl px-6">
-		<div class="reveal mx-auto max-w-3xl text-center">
-			<span class="label-mono">What you get</span>
-			<h2 class="mt-6 font-display text-3xl font-bold leading-tight text-heading md:text-5xl lg:text-6xl">
-				A growing library.<br /><span class="text-gradient">A room full of people who use it.</span>
+<section class="border-y-3 border-ink bg-bg-alt py-20 md:py-28">
+	<div class="mx-auto max-w-5xl px-6">
+		<div class="reveal">
+			<h2 class="font-display text-3xl font-bold text-ink md:text-5xl">
+				What's inside.
 			</h2>
-			<p class="mt-6 text-lg text-muted">Everything comes from real work. Not hypotheticals. Actual systems, templates, and workflows you can use today.</p>
+			<p class="mt-3 text-lg text-muted">A growing library. A room full of people who use it.</p>
 		</div>
 
-		<div class="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+		<div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
 			{#each features as feature, i}
 				<div
-					class="reveal card-elevated group rounded-2xl p-7"
-					style="transition-delay: {i * 80}ms;"
+					class="reveal neo-card rounded-xl p-6"
+					style="transition-delay: {i * 60}ms;"
 				>
-					<span class="font-mono text-[0.7rem] tracking-widest text-accent/60 uppercase">{feature.label}</span>
-					<h3 class="mt-3 text-lg font-semibold text-heading">{feature.title}</h3>
-					<p class="mt-3 text-sm leading-relaxed text-muted">{feature.desc}</p>
+					<div class="mb-4 inline-block rounded-lg border-2 border-ink {feature.color} px-3 py-1 font-mono text-xs font-medium uppercase tracking-wider">
+						0{i + 1}
+					</div>
+					<h3 class="text-lg font-bold text-ink">{feature.title}</h3>
+					<p class="mt-2 text-sm leading-relaxed text-muted">{feature.desc}</p>
 				</div>
 			{/each}
 		</div>
 	</div>
 </section>
 
-<!-- Shimmer divider -->
-<div class="shimmer-line"></div>
-
 <!-- Who Is Ben -->
-<section class="py-20 md:py-32">
+<section class="py-20 md:py-28">
 	<div class="mx-auto max-w-4xl px-6">
-		<div class="reveal mx-auto max-w-3xl text-center">
-			<span class="label-mono">Built by</span>
-			<h2 class="mt-6 font-display text-3xl font-bold leading-tight text-heading md:text-5xl lg:text-6xl">
-				A dad, a worker, a builder.<br /><span class="text-gradient">In that order.</span>
+		<div class="reveal">
+			<h2 class="font-display text-3xl font-bold text-ink md:text-5xl">
+				A dad, a worker, a builder. In that order.
 			</h2>
 		</div>
 
-		<div class="mt-16 space-y-6">
-			<div class="reveal rounded-2xl bg-surface p-8 md:p-12">
-				<p class="text-lg leading-relaxed text-text md:text-xl">
-					Ben is 37. Two young sons. Lives on Long Island. Works full-time at a tech startup. Runs a side consulting business doing AI automation for real companies. Builds products, tools, and experiments on nights and weekends.
-				</p>
-				<p class="mt-6 font-display text-2xl font-bold text-heading md:text-3xl">He uses AI for all of it.</p>
-			</div>
-
-			<div class="grid gap-4 md:grid-cols-2">
-				{#each [
-					{ label: 'For clients', text: 'Document intelligence pipelines for automotive financial data. AI-powered brand sites. Automation systems that save companies dozens of hours per week.' },
-					{ label: 'For family', text: 'A bedtime story generator with mindfulness themes. An activity generator for parents who need ideas fast. A birthday coordination app that replaced 47 text threads.' },
-					{ label: 'For the internet', text: 'BookmarkIQ (Chrome extension for Twitter bookmarks). Retell (AI video repurposing). A handful of open-source tools used by thousands.' },
-					{ label: 'For fun', text: 'A hand-tracking particle system. An AI search engine using spatial metaphors. An AI operator named Cortana that runs 24/7 on a server and manages half his life.' }
-				] as card, i}
-					<div class="reveal card-elevated rounded-xl p-6" style="transition-delay: {i * 80}ms;">
-						<span class="label-mono">{card.label}</span>
-						<p class="mt-3 text-sm leading-relaxed text-muted">{card.text}</p>
-					</div>
-				{/each}
-			</div>
-
-			<p class="reveal text-center text-sm text-muted">
-				The point is range. Not "AI for marketing" or "AI for developers." <span class="text-text">AI for everything.</span>
+		<div class="reveal neo-card mt-10 rounded-2xl p-8 md:p-12">
+			<p class="text-lg leading-relaxed text-ink md:text-xl">
+				Ben is 37. Two young sons. Long Island. Works full-time at a tech startup. Runs a side consulting business doing AI automation for real companies. Builds products on nights and weekends.
 			</p>
+			<p class="mt-6 font-display text-2xl font-bold text-ink md:text-3xl">He uses AI for all of it.</p>
+		</div>
+
+		<div class="mt-6 grid gap-5 md:grid-cols-2">
+			{#each [
+				{ label: 'Clients', text: 'Document intelligence pipelines. AI-powered sites. Automation saving companies dozens of hours/week.', color: 'bg-cyan-light' },
+				{ label: 'Family', text: 'Bedtime story generator. Activity idea engine. Birthday coordination app that replaced 47 text threads.', color: 'bg-yellow-light' },
+				{ label: 'Internet', text: 'BookmarkIQ (Chrome extension). Retell (AI video repurposing). Open-source tools used by thousands.', color: 'bg-pink-light' },
+				{ label: 'Fun', text: 'Hand-tracking particle system. AI search with spatial metaphors. An AI operator named Cortana running 24/7.', color: 'bg-cyan-light' }
+			] as card, i}
+				<div class="reveal neo-card rounded-xl p-6" style="transition-delay: {i * 60}ms;">
+					<span class="inline-block rounded-md border-2 border-ink {card.color} px-3 py-1 font-mono text-xs font-medium uppercase tracking-wider">{card.label}</span>
+					<p class="mt-3 text-sm leading-relaxed text-muted">{card.text}</p>
+				</div>
+			{/each}
 		</div>
 	</div>
 </section>
 
 <!-- Founding Members -->
-<section id="founding" class="relative py-20 md:py-32">
-	<div class="pointer-events-none absolute inset-0">
-		<div class="animate-glow-pulse absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/5 blur-[150px]"></div>
-	</div>
-
-	<div class="relative mx-auto max-w-3xl px-6 text-center">
+<section id="founding" class="border-y-3 border-ink bg-ink py-20 md:py-28">
+	<div class="mx-auto max-w-3xl px-6 text-center">
 		<div class="reveal">
-			<span class="label-mono">Limited availability</span>
-			<h2 class="mt-6 font-display text-3xl font-bold leading-tight text-heading md:text-5xl lg:text-6xl">
-				50 founding spots.<br /><span class="text-gradient">$29/mo locked forever.</span>
+			<h2 class="font-display text-3xl font-bold text-bg md:text-5xl">
+				50 founding spots.<br />$29/mo locked forever.
 			</h2>
-			<p class="mt-6 text-lg text-muted">
-				The first 50 members lock in $29/mo permanently. After that, the price goes to $49/mo.
+			<p class="mt-4 text-lg text-bg/60">
+				After 50 founding members, the price goes to $49/mo. Founding price never changes.
 			</p>
 		</div>
 
-		<!-- Pricing card -->
-		<div class="reveal mx-auto mt-14 max-w-sm" style="transition-delay: 200ms;">
-			<div class="overflow-hidden rounded-2xl border border-accent/15 bg-surface">
-				<div class="border-b border-accent/10 px-8 py-8">
-					<span class="label-mono">Founding Member</span>
-					<div class="mt-4 flex items-baseline justify-center gap-1">
-						<span class="font-display text-6xl font-extrabold text-heading">$29</span>
-						<span class="text-lg text-muted">/mo</span>
+		<div class="reveal mx-auto mt-12 max-w-sm" style="transition-delay: 150ms;">
+			<div class="rounded-2xl border-3 border-bg bg-surface p-0 shadow-[8px_8px_0_theme(--color-cyan)]">
+				<div class="border-b-3 border-ink bg-cyan px-8 py-6">
+					<span class="font-mono text-sm font-bold uppercase tracking-widest text-ink">Founding Member</span>
+					<div class="mt-3 flex items-baseline justify-center gap-1">
+						<span class="font-display text-6xl font-extrabold text-ink">$29</span>
+						<span class="text-xl text-ink/60">/mo</span>
 					</div>
-					<p class="mt-2 text-sm text-muted">Locked forever. Never increases.</p>
 				</div>
 
 				<div class="px-8 py-8">
-					<ul class="space-y-3 text-left text-sm text-text">
+					<ul class="space-y-3 text-left text-sm">
 						{#each [
 							'Permanent price lock at $29/mo',
 							'Free lifetime access on future platforms',
 							'Founding member badge',
-							'Permanent discounts on all future products',
-							'Direct input on what gets built next'
+							'Discounts on all future products',
+							'Direct input on what gets built'
 						] as perk}
 							<li class="flex gap-3">
-								<span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs text-accent">&#10003;</span>
+								<span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 border-ink bg-cyan-light text-xs font-bold">&#10003;</span>
 								{perk}
 							</li>
 						{/each}
@@ -322,10 +286,9 @@
 
 					<a
 						href="#founding"
-						class="group mt-8 flex w-full items-center justify-center rounded-lg bg-accent px-6 py-4 text-base font-semibold text-midnight transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/20"
+						class="neo-btn mt-8 w-full justify-center rounded-xl bg-yellow px-6 py-4 text-base text-ink"
 					>
-						Lock in your spot
-						<span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+						Lock in your spot &rarr;
 					</a>
 					<p class="mt-4 text-xs text-muted">Cancel anytime. No contracts.</p>
 				</div>
@@ -335,28 +298,25 @@
 </section>
 
 <!-- FAQ -->
-<section class="py-20 md:py-32">
+<section class="py-20 md:py-28">
 	<div class="mx-auto max-w-2xl px-6">
-		<div class="reveal text-center">
-			<span class="label-mono">FAQ</span>
-			<h2 class="mt-6 font-display text-3xl font-bold text-heading md:text-4xl">Questions</h2>
-		</div>
+		<h2 class="reveal font-display text-3xl font-bold text-ink md:text-4xl">Questions</h2>
 
-		<div class="mt-12 space-y-2">
+		<div class="mt-10 space-y-3">
 			{#each faqs as faq, i}
-				<div class="reveal" style="transition-delay: {i * 60}ms;">
+				<div class="reveal" style="transition-delay: {i * 50}ms;">
 					<button
 						onclick={() => toggleFaq(i)}
-						class="w-full rounded-xl bg-surface px-6 py-5 text-left transition-all duration-300 hover:bg-surface-2"
+						class="neo-card w-full rounded-xl px-6 py-5 text-left {openFaq === i ? 'bg-cyan-light' : ''}"
 					>
 						<div class="flex items-center justify-between">
-							<span class="text-[0.95rem] font-medium text-heading">{faq.q}</span>
-							<span class="ml-4 flex h-6 w-6 shrink-0 items-center justify-center text-sm text-muted transition-all duration-300 {openFaq === i ? 'rotate-45 text-accent' : ''}">+</span>
+							<span class="font-semibold text-ink">{faq.q}</span>
+							<span class="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border-2 border-ink text-sm font-bold transition-all {openFaq === i ? 'rotate-45 bg-cyan' : 'bg-surface'}">+</span>
 						</div>
 					</button>
 					<div class="faq-content {openFaq === i ? 'open' : ''}">
 						<div>
-							<p class="px-6 pt-2 pb-5 text-sm leading-relaxed text-muted">{faq.a}</p>
+							<p class="px-6 pt-3 pb-5 text-sm leading-relaxed text-muted">{faq.a}</p>
 						</div>
 					</div>
 				</div>
@@ -366,35 +326,33 @@
 </section>
 
 <!-- Final CTA -->
-<section class="relative py-20 md:py-32">
-	<div class="shimmer-line"></div>
-	<div class="relative mx-auto max-w-3xl px-6 pt-20 text-center">
+<section class="border-t-3 border-ink py-20 md:py-28">
+	<div class="mx-auto max-w-3xl px-6 text-center">
 		<div class="reveal">
-			<h2 class="font-display text-3xl font-bold text-heading md:text-5xl lg:text-6xl">
-				Real work. Real assets.<br /><span class="text-gradient">Real community.</span>
+			<h2 class="font-display text-3xl font-bold text-ink md:text-5xl">
+				Real work. Real assets. Real community.
 			</h2>
-			<p class="mx-auto mt-6 max-w-lg text-lg text-muted">
-				50 founding members. Full library access. Partner perks. Direct access. $29/mo locked forever.
+			<p class="mt-4 text-lg text-muted">
+				50 spots. Full library. Partner perks. Direct access. $29/mo locked forever.
 			</p>
 			<a
 				href="#founding"
-				class="group mt-10 inline-flex items-center rounded-lg bg-accent px-8 py-4 text-base font-semibold text-midnight transition-all duration-300 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/20"
+				class="neo-btn mt-10 inline-flex rounded-xl bg-cyan px-8 py-4 text-base text-ink"
 			>
-				Become a founding member
-				<span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+				Become a founding member &rarr;
 			</a>
 		</div>
 	</div>
 </section>
 
 <!-- Footer -->
-<footer class="border-t border-border/50 py-10">
+<footer class="border-t-3 border-ink py-8">
 	<div class="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-sm text-muted md:flex-row md:justify-between">
-		<span class="font-medium text-text/60">BuildsByBen &copy; {new Date().getFullYear()}</span>
+		<span class="font-bold text-ink">BuildsByBen &copy; {new Date().getFullYear()}</span>
 		<div class="flex gap-6">
-			<a href="https://x.com/xBenJamminx" target="_blank" rel="noopener" class="transition-colors duration-300 hover:text-accent">X / Twitter</a>
-			<a href="https://buildsbyben.com" target="_blank" rel="noopener" class="transition-colors duration-300 hover:text-accent">Portfolio</a>
-			<a href="https://github.com/xBenJamminx" target="_blank" rel="noopener" class="transition-colors duration-300 hover:text-accent">GitHub</a>
+			<a href="https://x.com/xBenJamminx" target="_blank" rel="noopener" class="font-medium transition-colors hover:text-ink">X / Twitter</a>
+			<a href="https://buildsbyben.com" target="_blank" rel="noopener" class="font-medium transition-colors hover:text-ink">Portfolio</a>
+			<a href="https://github.com/xBenJamminx" target="_blank" rel="noopener" class="font-medium transition-colors hover:text-ink">GitHub</a>
 		</div>
 	</div>
 </footer>
